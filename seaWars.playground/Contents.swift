@@ -17,11 +17,11 @@ var shipsDict = [String : Bool]()
 //Create Battle Field
 
 let blackcell = "\u{2b1b}", withecell = "\u{2b1c}", kill = "\u{1f480}", miss = "\u{20E4}", hit = "\u{1f525}"
-var fieldArray = Array(repeating: Array(repeating: withecell, count: 10), count: 10) // создаем масив состоящий из массивов по 10 эл в каждом. 10 по 10 \u{2b1b}
+var fieldArray = Array(repeating: Array(repeating: withecell, count: 10), count: 10) 
 for ship in myShips {
     
     for i in 0..<ship.count {
-        fieldArray [ship[i].y - 1][ship[i].x - 1] = blackcell // fieldArray[1][1] дает доступ к элементу массива масивов 1 1 элемент, [2][5]  2 массив 5 элемент 2го массива.
+        fieldArray [ship[i].y - 1][ship[i].x - 1] = blackcell 
         shipsDict ["\(ship[i].x)\(ship[i].y)"] = true   //создает уникальные ключи по которым есть или корабль или его часть.
             }
 }
@@ -31,7 +31,7 @@ for ship in myShips {
 
 for obj in fieldArray {
     for obj2 in obj {
-        print(obj2, terminator: "")    // терминатор дает возм печатать по гориз
+        print(obj2, terminator: "")    
     }
     print()
 }
